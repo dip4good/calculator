@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+    body{
+        padding: 0;
+        margin: 0;
+        background-color: gray;
+        box-sizing: border-box;
+    }
+        .full-container{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            bottom:20%;
+            text-align:center;
+            transform: translate(-50%,-50%);
+            border: 5px solid rgb(92, 98, 5);
+            height:450px;
+        }
+        .input{
+        width: 100%;
+        height: 20px;
+        padding: 40px 0;
+        background: #c1ff05;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+    }
+    input[type=button] {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 5px;
+    box-sizing: border-box;
+    background: #ecedef;
+    border: none;
+    font-size: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-weight: 700;
+    color: #5E5858;
+    cursor: pointer;
+    }
+    input[type=text] {
+    width: 270px;
+    height: 60px;
+    float: left;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    color: whitesmoke;
+    text-align: right;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0 25px;
+    }    
+    
+    .row {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* width: 200px; */
+    height: 50px;
+    font-size: 20px;
+    }
+    
+        
+       
+    </style>
+</head>
+<body>
+<div class="full-container">
+    <div class="input"><input type="text" id="output" placeholder="0"></div>
+    <div class="buttons">
+        <div class="row">
+            <button onclick="deleteCal()"> C </button>
+            <button onclick="document.getElementById('output').value +='**'">**</button>
+            <button onclick="document.getElementById('output').value +='%'">%</button>
+            <button onclick="document.getElementById('output').value +='/'">/</button>
+        </div>
+        <div class="row">
+            <button onclick="document.getElementById('output').value +='7'">7</button>
+            <button onclick="document.getElementById('output').value +='8'">8</button>
+            <button onclick="document.getElementById('output').value +='9'">9</button>
+            <button onclick="document.getElementById('output').value +='*'">*</button>
+        </div>
+        <div class="row">
+            <button onclick="document.getElementById('output').value +='4'">4</button>
+            <button onclick="document.getElementById('output').value +='5'">5</button>
+            <button onclick="document.getElementById('output').value +='6'">6</button>
+            <button onclick="document.getElementById('output').value +='-'">-</button>
+        </div>
+        <div class="row">
+            <button onclick="document.getElementById('output').value +='1'">1</button>
+            <button onclick="document.getElementById('output').value +='2'">2</button>
+            <button onclick="document.getElementById('output').value +='3'">3</button>
+            <button onclick="document.getElementById('output').value +='+'">+</button>
+        </div>
+    
+        <div class="row">
+            <button onclick="document.getElementById('output').value +='+'">0</button>
+            <button onclick="document.getElementById('output').value +='.'">.</button>
+            <button onclick="document.getElementById('output').value= eval(document.getElementById('output').value )"> = </button>
+        </div>
+    </div>
+</div>
+<script>
+     function deleteCal(){
+        document.getElementById('output').value=''
+    }
+</script>
+</body>
+</html>
